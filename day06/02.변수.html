@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수</title>
+</head>
+<body>
+    <h1> 스크립트의 변수 </h1>
+    <h3>
+        형식 제한이 없음
+    </h3>
+    <h3>
+        변수를 선언할 때 사용하는 키워드 : var, let, const
+    </h3>
+    <h3>
+        변수 : 선언, 초기값 
+        var : 재선언이 가능. 재할당
+        let, const : 재선언 불가능
+    </h3>
+    <h3>
+        let : 재선언 불가능, 재할당 가능
+        const : 재선언 불가능, 재할당 불가능
+    </h3>
+    <script> 
+        //var
+        var name = "kim";
+        console.log(name);
+        var name = "hong"; //재선언
+        console.log(name); //같은 변수명임에도 자바와 다르게 오류 없음
+        var name=1234;
+        console.log(name); 
+
+        //let
+        let letName ="kim";
+        console.log(letName);
+        // let letName ="hong";  ->>빨간밑줄생김. 재선언 불가능!
+        letName="hong";  //변수 변경은 가능
+
+        //const
+        const constName ="kim";
+        console.log(constName);
+        // const constName ="hong"; ->>빨간밑줄생김. 재선언, 변수변경도 불가능
+        console.log(constName);
+   </script>
+</body>
+</html>
