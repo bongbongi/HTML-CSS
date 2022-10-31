@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../day02"
+		},
+		{
+			"path": "../day03"
+		},
+		{
+			"path": "../day04"
+		},
+		{
+			"path": "../font"
+		},
+		{
+			"path": "../image"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "day03"
+	}
+}
