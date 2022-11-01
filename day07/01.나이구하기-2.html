@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    이름 : <input type="text" id="name">
+    주민등록번호 : <input type="text" id="rNum">
+    <button type="button" id="btn" onclick="show_result()">입력</button>
+    <h3 id="result"></h3>
+
+
+    <script>
+    let date=new Date();
+    let date1=date.getFullYear()+'년'+(date.getMonth()+1)+'월'+date.getDate()+'일';
+    console.log(date1);
+
+
+    
+    function show_result(){
+        let name = document.getElementById('name').value;
+        let rNum = document.getElementById('rNum').value; 
+        // 오늘날짜 /시간
+        let now= new Date(2001,10,10,12,00);
+        console.log(now);
+        let birth = rNum.substring(0,rNum.indexOf('-'));
+        console.log(birth);
+        let men='모름'
+        if(rNum.indexOf(rNum.indexOf('-')+1)==1){
+            men='남자';
+        }else{
+            men='여자';
+        }
+        document.getElementById('result').innerText = `이름 : ${name}  `;
+        document.getElementById('result').innerText += `생년월일 : ${birth}  `;
+        document.getElementById('result').innerText += `성별 : ${men}  `;
+    }
+    </script>
+</body>
+</html>

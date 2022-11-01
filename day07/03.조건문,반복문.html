@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문, 반목문</title>
+    <!-- 
+        조건문(if~else, switch)
+     -->
+</head>
+
+<body>
+    <h1>
+        if(조건절) {code;}
+        <!--세미콜론 꼭 있어야함! -->
+
+        조건절은 true/ false로 구분되는 문이 와야 함.
+
+    </h1>
+    <h3>
+        다중 조건문 : else if(조건절) {} 사용.
+        <!--else 와 if 사이에 띄어쓰기 주의-->
+    </h3>
+    <h3>
+        switch(변수/식){
+        case 값 : 구문; break;
+        }
+    </h3>
+    <h3>
+        반복문 : for, while, do~while
+        java에서 한 것과 같은 형태로 사용가능.
+    </h3>
+    <h3>
+        while(값){
+        code;
+        }
+        값 : true일때 반복, 조건이 항상 true이면 무한루프
+    </h3>
+    <br><br><br><br><br>
+    <form action="">
+        <fieldset>
+            <h3 id="result">구구단 7단</h3>
+    <button type="button" onclick="gugudan()">구구단 출력하기</button>   <!--function 넣을때 () 꼭 넣기!!!-->
+        </fieldset>
+    </form>
+    
+
+    <!-- 중괄호 주의 ★★★★★★★★★-->
+    <script>
+        let count = 0;
+        while (count < 10) {
+            console.log(`현재 count : ${count}`);
+            count++;
+        }
+
+
+        //7단 방법 1
+        // function gugudan() {
+        //     let dan = 7;
+        //     let incre = 1;
+
+        
+        //     while (incre < 10) {
+        //         // 방법 1
+        //         document.write(`${dan}*${incre}=${dan * incre}<br>`);
+        //         incre++;
+        //     }
+
+            
+        // }
+
+
+       
+       
+
+             // 7단 방법2
+        function gugudan() {
+            let dan = 7;
+            let incre = 1;
+            let str= `${dan}단 <br>`;
+            
+            while (incre < 10) {
+                 str+=    //+= 안해주면 7*9 만 나옴
+                 `${dan}*${incre}=${dan * incre}<br>`;
+                incre++;
+            }
+            document.getElementById('result').innerHTML=str;
+            
+        }
+
+
+
+</script>
+</body>
+
+</html>

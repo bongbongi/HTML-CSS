@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터리스트</title>
+</head>
+<body>
+    <h1>
+        form에서 입력한 데이터를 가여와 자바스크립트 객체로 저장한 후 그 객체에
+        저장된 데이터를 버튼 이벤트를 통해 출력하기
+    </h1>
+    <!-- <ul>
+        <li>
+            데이터 저장 버튼을 클릭하면 form에 입력된 데이터가 객체로 저장
+        </li>
+        <li>
+            출력버튼을 클릭하면 데이터가 html list로 출력된다.
+        </li>
+    </ul>
+    <h3>
+        데이터 리스트
+    </h3>
+    <ol>
+        <li>이름</li>
+        <li>거주지</li>
+        <li>좋아하는 리스트
+            <ul>
+                <li>1. </li>
+                <li>2. </li>
+                <li>3. </li>
+            </ul>
+            
+        </li>
+        <li>이메일</li>
+        <li>Pet 소유여부</li>
+        <li>지금 가장 하고 싶은 것</li>
+    </ol>
+    <h3>리스트의 구조에 따라 자바 스크립트 객체를 만들어 저장</h3> -->
+
+    <form action="">
+        <fieldset>
+            이름 : <input type="text" id="username"><br>
+            거주지 : <input type="text" id="live"><br>
+            좋아 하는 리스트 <br>
+            리스트 1 : <input type="text" id="list1"><br>
+            리스트 2 : <input type="text" id="list2"><br>
+            리스트 3 : <input type="text" id="list3"><br>
+            이메일 : <input type="text" id="email"><br>
+            Pet 소유여부 : <input type="text" id="petLive" placeholder="Y / N"><br>
+            지금 가장 하고 싶은 것 : <input type="text" id="want"><br>
+
+
+            <button type="button" onclick="me()">객체로 전송</button>
+
+        </fieldset>
+    </form>
+    <h3>위에서 만든 객체 출력</h3>
+    <button type="button" onclick="final()">출력</button>
+    <table>
+        <tr>
+            <th>이름</th>
+            <td id="username2"></td>
+        </tr>
+        <tr>
+            <th>거주지</th>
+            <td id="live2"></td>
+        </tr>
+        <tr>
+            <th>좋아하는 리스트</th>
+            <td>
+                <ul>
+                    <li id="list1_1"></li>
+                    <li id="list2_1"></li>
+                    <li id="list3_1"></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>이메일</th>
+            <td id="email2"></td>
+        </tr>
+        <tr>
+            <th>Pet 소유여부</th>
+            <td id="petLive2"></td>
+        </tr>
+        <tr>
+            <th>지금 가장 하고 싶은 것</th>
+            <td id="want2"></td>
+        </tr>
+
+    </table>
+
+    
+    <script>
+        let username = document.getElementById('username').value;
+            let live = document.getElementById('live').value;
+            let list1 = document.getElementById('list1').value;
+            let list2 = document.getElementById('list2').value;
+            let list3 = document.getElementById('list3').value;
+            let email = document.getElementById('email').value;
+            let petLive = document.getElementById('petLive').value;
+            let want = document.getElementById('want').value;
+        function me(){
+            let username = document.getElementById('username').value;
+            let live = document.getElementById('live').value;
+            let list1 = document.getElementById('list1').value;
+            let list2 = document.getElementById('list2').value;
+            let list3 = document.getElementById('list3').value;
+            let email = document.getElementById('email').value;
+            let petLive = document.getElementById('petLive').value;
+            let want = document.getElementById('want').value;
+        }
+       
+
+        console.log(username,live,list1,list2,list3,email,petLive,want);
+        console.log(username);
+
+        function final(){
+            
+            // console.log(name,live,list1,list2,list3,email,petLive,want);
+            document.getElementById('username2').innerText=`${username}`;
+            document.getElementById('live2').innerText=`${live}`;
+            document.getElementById('list1_1').innerText=`${list1}`;
+            document.getElementById('list2_1').innerText=`${list2}`;
+            document.getElementById('list3_1').innerText=`${list3}`;
+            document.getElementById('email2').innerText=`${email}`;
+            document.getElementById('petLive2').innerText=`${petLive}`;
+            document.getElementById('want2').innerText=`${want}`;
+        }
+    </script>
+</body>
+</html>

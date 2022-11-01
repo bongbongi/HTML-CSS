@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>합계구하기</title>
+</head>
+<body>
+    <form action="" id="myForm">
+        <fieldset>
+            <legend> 성적확인</legend>
+            이름 : <input type="text" id="name"><br>
+            국어 : <input type="text" id="kor"><br>
+            영어 : <input type="text" id="eng"><br>
+            수학 : <input type="text" id="math"><br>
+           <button type="button" id="sbmBtn" onclick="clickEvent()">계산</button>
+         </fieldset>
+    </form>
+    <!-- 합계 나올 위치 -->
+    <h3 id="sum"></h3>
+    <h3 id="avg"></h3>
+    <h3 id="result"></h3>
+    <h3 id="rank"></h3>
+    <script>
+        function clickEvent(){
+            let name = document.getElementById('name').value; //name에 입력한 값을 담아라 //value은 String이다
+            let kor = document.getElementById('kor').value; //value은 String이다
+            let eng = document.getElementById('eng').value;//value은 String이다
+            let math = document.getElementById('math').value;//value은 String이다
+            let sum=0;
+            let avg=0;
+            let result=0;
+            let rank=0;
+
+            //만약 점수가 0~100 값이 아니라면 경고창 띄우기 (alert : 경고창 띄우기)
+            if(kor<0 || kor>100 || eng<0 || eng>100 || math<0 || math>100){
+                alert('1~100사이의 값을 입력해주세요.');
+            }else{
+                kor = parseInt(kor); // 또는 Number(kor)  // number은 실수도 가능함!
+                eng = parseInt(eng);
+                math = parseInt(math);
+                sum =kor+eng+math;
+            }
+            //결과를 표현해야 하는 위치에 결과를 출력
+            //숫자의 결과가 없으면 (숫자로 변환되지 않은 값이 온다면) null
+            document.getElementById('sum').innerText=
+            `이름 : ${name}
+
+             합계 : ${sum}`+'점';
+            //평균, 합격여부, 등급
+            //합격여부 : 평균이 60점이상이면 합격, 아니면 불합격
+            //등급: 평균이 90이상이면 A B C D E F
+            //Math.round, Math.random, Math.max, Math.min....
+            //문자열 타입에서 소수자리를 표현 .toFixed(2) => 123.46 //String형식
+            let avg1 = Math.round((sum/3)*10)/10;
+
+
+            avg=sum/3;
+            document.getElementById('avg').innerText=`평균 : ${avg}`+'점';
+
+            result=avg>=60?"합격":"불합격";
+            document.getElementById('result').innerText=`합격여부 : ${result}`;
+
+            rank= avg>=90?'A':avg>=80?'B':avg>=70?'C':avg>=60?'D':'F';
+            document.getElementById('rank').innerText=`등급 : ${rank}`;
+
+
+        }
+    </script>
+</body>
+</html>

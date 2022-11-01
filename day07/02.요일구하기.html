@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요일구하기</title>
+    <!-- 오늘 날짜, 시간
+         get 값을 얻어올 때, set은 값을 변경할 때
+    
+        getFullYear() : 현재 년도만 추출
+        getMonth() : 월 0~11이 기본값 +1를 해줘야함
+        getDate() : 일
+        getDay() : 요일일 0~6 일~토
+        getHours()
+        getMinutes()
+        getSeconds()
+        getMilliseconds()
+        getTime()
+     -->
+
+    <!-- 날짜를 문자열로 변환하는 함수 -->
+    <!--                           
+            .toString() : Sat Nov 10 2001 12:00:00 GMT+0900 (한국 표준시)
+            .toDateString() : Sat Nov 10 2001
+            .toLocaleString() : 2022.11.01. 오전 11:39:55
+            .toLocaleDateString() : 2022.11.01.
+      -->
+
+
+    <!-- 날짜의 요일을 알려주는 값 -->
+
+
+    <!-- input 날짜 입력받아 입력받은 날짜의 요일을 같이 출력
+            2022-11-01 => 2022-11-01(화)  -->
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            날짜 : <input type="date" id="date1">
+
+            <button type="button" id="" onclick="weekday()">weekday</button>
+        </fieldset>
+    </form>
+
+
+    <!-- 출력할 위치 -->
+    <h3 id="week"></h3>
+
+    <script>
+        let now = new Date();
+        console.log(now.toLocaleDateString());
+        console.log('-----------------');
+
+
+
+        // function 
+        function weekday() {
+            let date = document.getElementById('date1').value; //string임
+            let now2 = new Date(date);
+            console.log(typeof now, now);
+            console.log(now.toLocaleDateString());
+
+            let day = now2.getDay();
+            let week = '';
+            let arrDay = ['일','월','화','수','목','금','토']; //배열값
+            console.log(arrDay[day]);
+            // switch (day) {
+            //     case 0: week = '일'; break;
+            //     case 1: week = '월'; break;
+            //     case 2: week = '화'; break;
+            //     case 3: week = '수'; break;
+            //     case 4: week = '목'; break;
+            //     case 5: week = '금'; break;
+            //     case 6: week = '토'; break;
+
+            // }
+            // document.getElementById('week').innerText =
+            //     `${now2.toLocaleDateString()} (${week})`;
+            document.getElementById('week').innerText =
+                `${now2.toLocaleDateString()} (${arrDay[day]})`;
+
+        }
+    </script>
+</body>
+
+</html>

@@ -71,6 +71,23 @@
         callHerName('은솔이'); //직접 값을 입력
         callHerName(hers); // 변수(함수 외부에서 선언한 변수)
        //callHerName(hisName); // 변수(함수 내부에서 선언한 변수) -> 외부에서 선언 불가능
+
+       //이름, 좋아하는 것을 파라미터로 입력받아 출력
+       //name, favor 값을 받아, 00은 00을 좋아한대요 출력
+        function whatHisLike(name, favor){
+            let hisName = name+'님';
+            let like = favor+'를(을)';
+            console.log(`$(hisName)은 $(like) 좋아한대요`);
+
+        }
+        whatHisLike('홍길동','coffee');
+
+        function iknow(herName,favor){
+            callHerName(herName);
+            whatHisLike(herName,favor);
+            console.log('iknow');
+        }
+        iknow('홍길순','coffee');
     </script>
 </body>
 </html>
