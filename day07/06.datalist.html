@@ -42,22 +42,22 @@
     <form action="">
         <fieldset>
             이름 : <input type="text" id="username"><br>
-            거주지 : <input type="text" id="live"><br>
+            거주지 : <input type="text" id="addr"><br>
             좋아 하는 리스트 <br>
             리스트 1 : <input type="text" id="list1"><br>
             리스트 2 : <input type="text" id="list2"><br>
             리스트 3 : <input type="text" id="list3"><br>
             이메일 : <input type="text" id="email"><br>
-            Pet 소유여부 : <input type="text" id="petLive" placeholder="Y / N"><br>
+            Pet 소유여부 : <input type="text" id="petaddr" placeholder="Y / N"><br>
             지금 가장 하고 싶은 것 : <input type="text" id="want"><br>
 
 
-            <button type="button" onclick="me()">객체로 전송</button>
+            <button type="button" >객체로 전송</button>
 
         </fieldset>
     </form>
     <h3>위에서 만든 객체 출력</h3>
-    <button type="button" onclick="final()">출력</button>
+    <button type="button" onclick="printData()">출력</button>
     <table>
         <tr>
             <th>이름</th>
@@ -65,15 +65,13 @@
         </tr>
         <tr>
             <th>거주지</th>
-            <td id="live2"></td>
+            <td id="addr2"></td>
         </tr>
         <tr>
             <th>좋아하는 리스트</th>
             <td>
-                <ul>
-                    <li id="list1_1"></li>
-                    <li id="list2_1"></li>
-                    <li id="list3_1"></li>
+                <ul id="lists">
+                    
                 </ul>
             </td>
         </tr>
@@ -83,7 +81,7 @@
         </tr>
         <tr>
             <th>Pet 소유여부</th>
-            <td id="petLive2"></td>
+            <td id="petaddr2"></td>
         </tr>
         <tr>
             <th>지금 가장 하고 싶은 것</th>
@@ -94,41 +92,57 @@
 
     
     <script>
-        let username = document.getElementById('username').value;
-            let live = document.getElementById('live').value;
-            let list1 = document.getElementById('list1').value;
-            let list2 = document.getElementById('list2').value;
-            let list3 = document.getElementById('list3').value;
-            let email = document.getElementById('email').value;
-            let petLive = document.getElementById('petLive').value;
-            let want = document.getElementById('want').value;
-        function me(){
+        const dataObj = {};
+
+       
+        function getData(){
             let username = document.getElementById('username').value;
-            let live = document.getElementById('live').value;
+            let addr = document.getElementById('addr').value;
             let list1 = document.getElementById('list1').value;
             let list2 = document.getElementById('list2').value;
             let list3 = document.getElementById('list3').value;
             let email = document.getElementById('email').value;
-            let petLive = document.getElementById('petLive').value;
+            let petaddr = document.getElementById('petaddr').value;
             let want = document.getElementById('want').value;
+
+            //이 값을 요소로 만들어서 dateObj 담기
+            dataObj.username=username;
+            dataObj.addr=addr;
+            dataObj.list={};
+            dataObj.list.list1=list1();
+            dataObj.list.list2=list2();
+            dataObj.list.list3=list3();
+            dataObj.email=email;
+            dataObj.petaddr=petaddr;
+            dataObj.want=want;
+
+            console.log(dataObj);
+
         }
        
 
-        console.log(username,live,list1,list2,list3,email,petLive,want);
+        console.log(username,addr,list1,list2,list3,email,petaddr,want);
         console.log(username);
 
-        function final(){
+        function printData(){
             
-            // console.log(name,live,list1,list2,list3,email,petLive,want);
-            document.getElementById('username2').innerText=`${username}`;
-            document.getElementById('live2').innerText=`${live}`;
-            document.getElementById('list1_1').innerText=`${list1}`;
-            document.getElementById('list2_1').innerText=`${list2}`;
-            document.getElementById('list3_1').innerText=`${list3}`;
-            document.getElementById('email2').innerText=`${email}`;
-            document.getElementById('petLive2').innerText=`${petLive}`;
-            document.getElementById('want2').innerText=`${want}`;
+            // console.log(name,addr,list1,list2,list3,email,petaddr,want);
+            document.getElementById('username2').innerText=dataObj.username;
+            document.getElementById('addr2').innerText=dataObj.addr;
+            
+            document.getElementById('email2').innerText=dataObj.email;
+            document.getElementById('petaddr2').innerText=dataObj.petaddr;
+            document.getElementById('want2').innerText=dataObj.want;
+
+            let str = `<li>${dataObj.list.list1}</li>`;
+           
+            str += `<li>${dataObj.list.list1}</li>`;
+            str += `<li>${dataObj.list1.list1}</li>`;
+            document.getElementById('lists').innerHTML=str;
         }
+
+
+       
     </script>
 </body>
 </html>

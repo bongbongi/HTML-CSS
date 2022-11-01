@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이름찾기</title>
+</head>
+
+<body>
+    <h1>
+        input text에 파일명, 확장자를 입력하고, 전송버튼을 클릭하면
+        이미지 파일인지 아닌지 검사하여
+        이미지파일 = 정상파일입니다.
+        이미지파일이 아니면 = 이미지 파일만 가능합니다. 라고 출력
+    </h1>
+
+    <form action="">
+        <fieldset>
+            파일명 : <input type="text" id="fileName">
+            <button type="button" id="subBtn" onclick="test()">전송버튼</button>
+        </fieldset>
+    </form>
+    <h2 id="printZone"></h2>
+    <script>
+        /* 
+            입력받은 fileName이 이미지 확장자가 맞으면 true, false
+            대소문자 상관없음. jpg = JPG
+            jpg, gif, png, jpeg, bmp
+
+            match(값....) 이 있다면 true, false 반환
+        */
+
+        let str = "red, yellow, blue";
+        console.log(str.match("red") == "red");
+
+        //정규식 :  / 값 /gi =>값을 대소문자 구분없이 전체 체크 
+        //toLowerCase : 소문자, toUpperCase:대문자
+        console.log("--------------------");
+
+
+
+        function test() {
+            let fileName = document.getElementById(`fileName`).value;
+            let re = fileName.toLowerCase();
+            console.log(re);
+            let result = '';
+            if (re == 'jpg' || re == 'gif' || re == 'png' || re == 'jpeg' || re == 'bmp') {
+
+                result = 'true';
+
+            } else if (re == '') {
+                result = '입력해주세요'
+            }
+            else {
+                result = 'false';
+            }
+            console.log(result);
+            document.getElementById('printZone').innerText =
+                `${result}`;
+        }
+        // let a ='aaaa';
+        // a.toLowerCase();
+        // console.log(a);
+    </script>
+</body>
+
+</html>
