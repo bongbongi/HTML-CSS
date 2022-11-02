@@ -42,9 +42,18 @@
         console.log(ourClass);
         ourClass.unshift('홍길순');
         console.log(ourClass);
-        
+        console.log('--------------------');
         let name = ourClass.pop();
         console.log(name);
+        console.log(ourClass);
+        ourClass.unshift({n:10,m:20});
+        console.log(ourClass);
+        let o = ourClass.shift();
+        console.log(o);
+        let str = ourClass.join(',');
+        console.log(str);
+
+
 
     </script>
 </body>
