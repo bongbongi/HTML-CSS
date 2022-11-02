@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제</title>
+    <!-- 
+        500/500px 박스를 만들고, 안녕하세요 글자를 입력
+
+        글자 : 기울림, 굷게, 크기 알아서 설정, 가운데정렬, 밑줄
+
+        윗줄 가운데 들어갈 수 있게 설정
+     -->
+    <style>
+        .box1 {
+            width: 500px;
+            height: 500px;
+
+            font-size: 100px;
+            font-style: italic;
+            text-align: center;
+            text-decoration: underline;
+            text-shadow: 5px 5px 5px pink;
+            text-transform: capitalize;
+
+            border: 5px solid rgba(240, 204, 228, 0.199);
+            border-radius: 100px;
+            background-color: beige;
+            box-shadow: 5px 5px 5px pink inset;
+
+
+            background-image: url(/image/오리.jpg);
+            background-size: 200px 200px;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            padding-top: 30px;
+            /* padding 안쪽여백 */
+
+        }
+
+        .box1:hover {
+            border-color: rgb(55, 172, 218);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+
+        hello
+    </div>
+</body>
+
+</html>

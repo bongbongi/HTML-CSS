@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <!-- 
+        transform : 회전, 이동, 확대할 때 사용
+            - translate(x1,y1) : x축으로 x1만큼, 축으로 y1만큼 이동
+            - translateX(x1) : x축만 이동
+            - translateY(y1) : y축만 이동
+            - scale(w,h) : 가로를 w배, 높이를 h배만큼 조절, 0으로 하면 안보임
+            - scale(w) : 가로만 w배
+            - scale(h) : 세로만 h배
+            - rotate(a deg) : a각도 만큼 시계방향으로 회전, deg는 회전시 단위, 붙여줘야 작동함
+            - skew(xa,ya) : x축으로 xa만큼, y축으로 ya만큼 기울림
+            - skewX(xa) : x축으로 xa만큼 기울림
+            - skewy(ya) : y축으로 ya만큼 기울림
+            회전시 단위 : deg
+ 
+     -->
+
+     <!-- 
+        transition : 속성을 서서히 변화시키는 속성
+            - property : 서서히 변화시킬 속성 (none, all, property(속성이름)...)
+            - timing-function : 진행속도(ease(기본), linear, ease-in ... 속도 차이)
+            - duration : 총시간 
+            - delay : 시작지연
+            - initial : 기본값 설정
+            - inherit : 부모 요소의 속성값 상속
+      -->
+    <style>
+        div{
+            width: 200px;
+            height: 50px;
+            border: 1px solid white;
+            background-color: palegoldenrod;
+            margin: auto;
+
+        }
+        /* x, y축 이동 */
+        @keyframes translate{
+            0%{ transform :  translate(0,0);}
+            50%{ transform : translate(50px,50px) }
+            100%{ transform: translate(0,100px);}
+
+        }
+
+        .box1{
+            animation: translate infinite 3s;
+        }
+
+        /* 가로세로 배수만큼 크기조절 */
+        @keyframes translate2{
+            0%{ transform :  scale(0,0);}
+            50%{ transform : scale(5,5); }
+            100%{ transform: translate(3,0);}
+        }
+
+        .box2{
+            animation: translate2 infinite 3s;
+        }
+
+         /* 각도만큼 회전 */
+         @keyframes translate3{
+            0%{ transform :  rotate(50deg)}
+            50%{ transform : rotate(150deg)}
+            100%{ transform: rotate(50deg)}
+        }
+
+        .box3{
+            animation: translate3 infinite 3s;
+        }
+
+         /* skew(xa,ya) : x축으로 xa만큼, y축으로 ya만큼 기울림 */
+         @keyframes translate4{
+            0%{ transform :  skew(5deg,570deg)}
+            50%{ transform : skew(10deg,20deg)}
+            100%{ transform: skew(20deg,570deg)}
+        }
+
+        .box4{
+            animation: translate4 infinite 5s;
+        }
+
+        .box5{
+            transition: all ease 1s;
+        }
+
+        .box5:hover{
+            transform: rotate(45deg);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <div class="box2"></div>
+    <br><br><br><br><br><br><br><br><br>
+    <div class="box3"></div>
+    <br><br><br><br><br>
+    <div class="box4"></div>
+    <br><br><br><br><br>
+    <div class="box5"></div>
+</body>
+
+</html>

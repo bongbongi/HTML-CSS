@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 태그[속성명=값] */
+        input[type=text] {
+            color: blue;
+            
+        }
+
+        input:focus {
+            outline-color: red;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+    <h2>회원가입</h2>
+    <input type="image" width="20%" src="https://cdn.pixabay.com/photo/2022/10/15/21/23/cat-7523894_960_720.jpg">
+    </p>
+
+
+    <form action="">
+        아이디 : <input type="text" placeholder="ID" name="id"> <br>
+        비밀번호 : <input type="password" placeholder="PW" name="password"> <br>
+        비밀번호 확인 : <input type="password" placeholder="pw 다시" name="repassword"> <br>
+        이메일 : <input type="email" name="email" placeholder="email" name="email"> <br>
+
+        성별 : <label for="man"><input type="radio" name="sex" id="man" value="man">남성</label>
+        <label for="women"><input type="radio" name="sex" id="women" value="women">여성</label><br>
+        전화번호 : <input type="number" name="phone-first"> -
+        <input type="number" name="phonenum-mid"> -
+        <input type="number" name="phone-last"><br>
+        <input type="submit" value="회원가입">
+
+    </form>
+
+
+</body>
+
+</html>

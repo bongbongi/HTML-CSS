@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation2</title>
+
+    <style>
+        /* animation-timing-duraion : 애니메이션 진행속도 ex.등속
+           animation-deley : animation 시작 전 대기시간
+           animation-direction : 진행방향 (정방향, 역방향...)
+           animation-fill-mode : animation을 마친 후 어떤 상태로 만들지 결정하는 모드
+           animation-play-state : animation을 진행할지 여부( 진행할지 멈출지 설정)
+        */
+
+        /* box를 왼쪽으로 천천히 이동시켰다가 다시 돌아오는 애니메이션 */
+
+
+        .box-out{
+            width: 100%;
+            border: 2px solid black;
+        }
+
+        .box{
+            animation-name: boxxx;
+            animation-duration: 12s;
+            animation-iteration-count: 5;
+
+            
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+        }
+
+        @keyframes boxxx{
+            0%{
+                margin-left: 0%;
+                
+            }
+            50%{
+                margin-left: 90%;
+            }
+            100%{
+                margin-left: 0%;
+            }
+        }
+
+        .box1{
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+           
+
+            animation-name: boxbig;
+            animation-duration: 12s;
+            animation-iteration-count: 5;
+            /* animation : boxbig 12s 5   -->>>이렇게 한번에 써도 가능 */
+
+        }
+
+        @keyframes boxbig{
+            0%{
+                margin-left: 0%;
+                
+            }
+            50%{
+                margin-left: 90%;
+                width: 300px;
+            height: 300px;
+
+            }
+            100%{
+                margin-left: 0%;
+            }
+        }
+
+       
+
+       
+
+        
+    </style>
+</head>
+<body>
+    <div class="box-out">
+        <div class="box"></div>
+    </div>
+    <br><br><br><br><br>
+    <div class="box1"></div>
+</body>
+</html>
