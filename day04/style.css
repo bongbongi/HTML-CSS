@@ -1,0 +1,65 @@
+body {
+   
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: hsl(143, 36%, 38%);
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.box{
+    position: relative;
+    width: 450px;
+    height: 370px;
+    background-color: darkseagreen;
+    border-radius: 14px;
+    /* border: 1px solid black; */
+    padding-left: 0px;
+    padding-top: 40px;
+    padding-right: 7px;
+}
+
+
+.id, .password, .login{
+    margin: 5px;
+    width: 450px;
+    height: 70px;
+    
+    /* border: 1px solid black; */
+}
+
+
+input{
+    margin: 10px;
+    width: 400px;
+    height: 60px;
+    border-radius: 5px;
+    padding-top: 5px;
+    font-size: 1.5em;
+}
+
+.login{
+    margin: 28px; 
+    width: 400px;
+    height: 60px;
+    border-radius: 5px;
+    
+    background-color: green;
+    color: white;
+    font-weight: 700;
+    font-size: 1.5em;
+   
+}
+
+.text{
+    color: gray;
+    font-weight: 700;
+
+
+}

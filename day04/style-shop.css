@@ -1,0 +1,189 @@
+@font-face {
+    font-family: Josefin_Sans;
+    src: url(/font/Josefin_Sans/JosefinSans-Italic-VariableFont_wght.ttf);
+}
+
+body{
+    font-family: Josefin_Sans;
+}
+
+div {
+    margin: auto;
+    text-align: center;
+
+}
+
+/*전체 박스*/
+.container {
+    /* border: 1px solid black; */
+
+    /* height: 100%; */
+
+
+    margin-top: 10px;
+
+
+}
+
+.head,
+.footer {
+    height: 120px;
+    /* border: 1px solid black; */
+}
+
+.mid-image {
+    /* height: 10%; */
+    /* border: 1px solid black; */
+}
+
+.goods {
+    height: 500px;
+}
+
+img {
+    padding-top: 20px;
+    width: 1400px;
+    height: 500px;
+}
+
+
+.btns {
+    /* border: 1px solid black; */
+    margin-top: 50px;
+   
+   
+    float: right;
+   /* width: 25px; */
+    
+}
+
+
+
+/*btns클래스 사이즈가 안먹어서 btn으로 다시 작성*/
+#btn{
+    font-size: 20px;
+    margin-right: 50px;
+    
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
+
+#login{
+    margin-right: 15px;
+    position: relative;
+}
+
+
+
+#logobtn {
+    background-color: white;
+    /* margin-top: 10px; */
+    outline: none;
+    font-size: 2em;
+    float: left;
+    margin-left: 80px;
+    border: none;
+    
+}
+
+#logobtn>img{
+    width: 100px;
+    height: 80px;
+}
+
+
+/*NEW, BEST 텍스트*/
+
+.goods>h4 {
+    font-size: 35px;
+    animation-name: scaleFont;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes scaleFont {
+    50% {
+        opacity: 0;
+      }
+}
+
+.product1,
+.product2,
+.product3{
+    transition: transform 1s;
+}
+.product1:hover{
+    transform:scale(1.1); 
+}
+
+.product2:hover{
+    transform:scale(1.1); 
+}
+
+.product3:hover{
+    transform:scale(1.1); 
+}
+
+/*상품박스*/
+.product1 {
+    /* border: 1px solid black; */
+    width: 500px;
+    height: 400px;
+    float: left;
+    position: relative;
+    /* left: 440px; */
+    margin-left: 300px;
+    
+
+}
+
+.product2 {
+    /* border: 1px solid black; */
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    margin-left: 690px;
+}
+
+.product3 {
+    /* border: 1px solid black; */
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    /* right: 440px */
+    margin-left: 1070px;
+    
+    
+}
+
+.product-img>img {
+    padding-top: 6px;
+    /* border: 1px solid black; */
+    width: 220px;
+    height: 250px;
+}
+
+
+
+/*하단 아이콘*/
+.footer{
+   
+    font-size: 25px;
+    
+}
+
+.fa fa-instagram{
+    color: hotpink;
+}
+
+.fa fa-facebook-f{
+    color: blue;
+}
+
+.fa fa-twitter{
+    color: lightskyblue;
+}
+

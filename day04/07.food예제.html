@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배달의 민족</title>
+
+    <style>
+        .head {
+            border: 1px solid papayawhip;
+            text-align: center;
+
+            width: 420px;
+
+            margin: auto;
+            
+
+            /* position: relative; */
+
+        }
+
+        /* 폰트 변경 
+            font-face : 폰트를 저장하여 웹에서 적용될 수 있도록 사용*/
+        @font-face {
+            font-family: Jua;
+            src: url(/font/Jua/Jua-Regular.ttf);
+        }
+        body{
+            font-family: Jua;
+            background-color: lightblue;
+        }
+
+        
+
+        .head{
+           background-color: antiquewhite;
+           margin-top: 50px;
+        }
+        .name {
+            font-size: 50px;
+            
+
+
+        }
+
+        .subname{
+            font-size: 25px;
+        }
+
+       
+         
+       
+        .menu{
+            /* border: 1px solid black; */
+            width: 350px;
+            height: 1;
+            /* padding: 4em; */
+            /* float: left; */
+            margin: 35px;
+           
+            
+        }
+
+
+        img:hover{
+            transform : scale(1.1);
+
+        }
+        img{
+
+            /* background-color: pink; */
+            transition: all ease 1s;
+          
+
+        }
+        .image{
+            overflow: hidden;
+        }
+
+
+        /* @keyframes scaleFont {
+            0% {
+                font-size: 20px;
+            }
+
+            50% {
+                font-size: 50px;
+            }
+
+            100% {
+                font-size: 20px;
+            }
+        }
+
+        .ani {
+            animation-name: scaleFont;
+            animation-duration: 3s;
+            animation-iteration-count: 2;
+        } */
+
+
+        @keyframes scaleFont {
+            0% {
+                font-size: 10px;
+            }
+
+            50% {
+                font-size: 15px;
+            }
+
+            100% {
+                font-size: 10px;
+            }
+        }
+
+        .menuline3 {
+            animation-name: scaleFont;
+            animation-duration: 1s;
+            animation-iteration-count: 100;
+        } */
+
+      
+
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        
+        <br><br>
+        <div class="name">전 국 별 미</div>
+        <br>
+        <div class="subname">망설이면 놓치는 타임 특가 </div>
+       
+
+
+        <div class="menu">
+            <div class="image">
+                <img src="../image/꼬마김밥.jpg" width=90% alt="꼬마김밥"></div>
+            <p></p>
+            <div class="menuline1">맛있는 꼬마김밥</div>
+            <br>
+            <div class="menuline2">주머니가 가벼운 당신의 마음까지 생각한 착한 가격</div>
+            <br>
+            <div class="menuline3"><del>5,000원</del> 3,500원</div>
+            <br>
+            <div class="menuline4">바로결제</div>
+        </div>
+        
+    </div>
+   
+
+</body>
+
+</html>
