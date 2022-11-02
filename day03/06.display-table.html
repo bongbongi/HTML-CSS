@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display-table</title>
+    <!-- display 
+            - inline 앞뒤로 줄바꿈 XXX
+            - block 앞뒤로 줄바꿈
+            - none 박스 생성되지 않고 공간차지도 안함
+            - inline-block : inline인데 내부는 block처럼 표시함  -->
+    <style>
+        
+        *{
+            /* 모든 태그 설정 */
+            margin: 0;
+            padding: 0;
+        }
+
+        .boxwrap{
+            display: table;   /*표 형태로 만드는 것*/
+            width: 100%;
+            /* background-color: aquamarine; 최종 전 확인용 배경색 설정 */
+        }
+
+        .boxwrap, .box{
+            /* 부모 속성(table)안에 들어가는 셀(표 안의 셀) */
+            display: table-cell;
+            /* 세로 가운데 정렬 */
+            vertical-align: middle;
+            text-align: center;
+            padding: 10px;
+            /* 테이블 고정 */
+            table-layout: fixed;
+        }
+
+        .thumb img{
+            width: 50%;
+            
+        }
+
+        .thumb{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .title_item{
+             /*block 요소 앞 뒤로 줄바꿈*/
+            display: block; 
+           
+            font-size: 1em;
+        }
+
+        .desc_item{
+            font-size: 0.7em;
+        }
+
+        .price{
+            font-size: 0.9em;
+            font-weight: 700;
+        }
+
+        .title_item, .desc_item{
+            margin-top: 10px;
+        }
+
+        .box .link{
+            text-decoration: none;
+            color: black;
+        }
+
+        .box .link:hover{
+            text-decoration: underline;
+        }
+
+        
+        /* img[src]{
+            width: 50%;
+            height: 200px;
+        }
+         */
+
+
+
+    </style>
+</head>
+<!-- span 태그 : inline, 줄바꿈 X
+    div태그 : block, 줄바꿈 O  -->
+
+<body>
+
+    <div class="boxwrap">
+        <!-- 각가의 box들 추가 -->
+
+        <!-- 첫 박스 set -->
+        <div class="box">
+            <!-- 사진과, 글자 전체에 링크 걸어주기 -->
+            <a href="https://www.nonghyupmall.com/BC14010R/viewDetail.nh?wrsC=7022180114&basketCnt=0&cdnAplYn=N" class="link">
+                <span class="thumb">
+                    <img src="/image/수박.jpg" alt="수박">
+                </span>
+                <strong class="title_item">수박</strong>
+                <p class="desc_item">여름에 맛있는 수박</p>
+                <p class="price">15,000원</p>
+            </a>
+
+        </div>
+
+        <!-- 두번째 박스 시작점 -->
+        <div class="box">
+            <!-- 사진과, 글자 전체에 링크 걸어주기 -->
+            <a href="https://www.nonghyupmall.com/BC14010R/viewDetail.nh?wrsC=6003944642&basketCnt=0&cdnAplYn=N" class="link">
+                <span class="thumb">
+                    <img src="/image/블루베리.jpg" alt="블루베리">
+                </span>
+                <strong class="title_item">블루베리</strong>
+                <p class="desc_item">눈에 좋은 블루베리</p>
+                <p class="price">20,000원</p>
+            </a>
+
+        </div>
+         <!-- 세번째 박스 시작점 -->
+         <div class="box">
+            <!-- 사진과, 글자 전체에 링크 걸어주기 -->
+            <a href="https://www.nonghyupmall.com/BC14010R/viewDetail.nh?wrsC=7002868483&basketCnt=0&cdnAplYn=N" class="link">
+                <span class="thumb">
+                    <img src="/image/오렌지.jpg" alt="오렌지">
+                </span>
+                <strong class="title_item">오렌지</strong>
+                <p class="desc_item">새콤달콤</p>
+                <p class="price">12,000원</p>
+            </a>
+
+        </div>
+         <!-- 네번째 박스 시작점 -->
+         <div class="box">
+            <!-- 사진과, 글자 전체에 링크 걸어주기 -->
+            <a href="https://www.nonghyupmall.com/BC14010R/viewDetail.nh?wrsC=4029675786&basketCnt=0&cdnAplYn=N" class="link">
+                <span class="thumb">
+                    <img src="/image/사과.jpg" alt="사과">
+                </span>
+                <strong class="title_item">사과</strong>
+                <p class="desc_item">아주아주 빨간 사과</p>
+                <p class="price">17,000원</p>
+            </a>
+
+        </div>
+    </div>
+</body>
+
+</html>

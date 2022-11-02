@@ -1,0 +1,59 @@
+
+body{
+    text-align: center;
+
+   
+}
+
+a{
+   
+    text-decoration-line: none;
+    color: gray;
+    background-color: white;
+    
+
+}
+
+button{
+    background-color: white;
+
+    border: none;
+
+    font-size: 25px;
+
+   
+}
+
+input[type=image]{
+    width: 700px;
+    height: 50%;
+    padding-top: 20px;
+}
+
+h1{
+    font-size: 70px;
+    color: cadetblue;
+}
+
+.icon1>.material-symbols-outlined {
+    /*전화기 아이콘*/
+    position: absolute;
+    top: 10px;
+    right: 150px;
+    color: black;
+
+
+}
+
+.icon2>.material-symbols-outlined {
+    /*유튜브 아이콘*/
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    color: red;
+
+
+}
+
+
+

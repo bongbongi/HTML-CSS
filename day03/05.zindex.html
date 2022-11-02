@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-index</title>
+    <!-- Z-index : 값이 큰 요소가 맨 앞으로 옴 -->
+
+    <style>
+        .container {
+            margin: auto;
+            width: 300px;
+            border: 1px solid black;
+            text-align: center;
+
+        }
+
+        .top,
+        .bt {
+            /*여러 클래스를 한번에 적을때 앞에 '.' 붙였는지 확인!*/
+            width: 90%;
+            /*container 넓이의 90% */
+            height: 50px;
+            border: 3px solid black;
+            margin: 10px auto;
+            /*margin을 줘야 가장 바깎 여백 생김*/
+            font-size: 2em;
+            font-weight: 700;
+            padding-top: 5px;
+            /*텍스트라 적혀있는 박스 안쪽 여백*/
+
+        }
+
+        .mid {
+            position: relative;
+            /*요소들을 자기 자신을 기준으로 배치*/
+            width: 90%;
+            height: 200px;
+            border: 3px solid black;
+            margin: 10px auto;
+        }
+
+        .red,
+        .green,
+        .blue {
+            width: 40%;
+            height: 50px;
+            /* border: 3px solid black; */
+            box-shadow: -10px -7px 7px 1px hotpink;
+            /*box-shadow 순서: 오른,-왼 / 아래,-위 / 번짐효과 / 확장효과 */
+            margin: 40px auto;
+            position: absolute;
+            /*부모 요소를 기준으로 배치(mid클래스가 조상) mid클래스 안에서 놀게됨*/
+            padding: 5px;
+
+        }
+
+        .red {
+            background-color: red;
+            z-index: 0;
+            /*숫자가 작을수록 아래에 배치*/
+            left: 40px;
+
+        }
+
+        .green {
+            background-color: green;
+            z-index: 50;
+            left: 80px;
+            top: 20px; 
+        }
+
+        .blue {
+            background-color: blue;
+            z-index: 80;
+            left: 120px;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">텍스트</div>
+        <div class="mid">
+            <div class="red"></div>
+            <div class="green"></div>
+            <div class="blue"></div>
+        </div>
+
+
+
+        <div class="bt"> 텍스트 </div>
+    </div>
+
+</body>
+
+</html>
