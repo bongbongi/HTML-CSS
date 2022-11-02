@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position 연습문제</title>
+    <!-- 
+        마우스을 올리면 박스의 위치가 밑으로 내려감
+     -->
+
+     <style>
+        div{
+            height: 100px;
+            width: 100px;
+
+            /* border: 1px solid black; */
+
+            /* float: left; */
+
+            background-color: pink;
+
+            text-align: center;
+            color: blueviolet;
+            font-size: 20px;
+            font-weight: 700;
+
+            display: inline-block;
+            
+            position: relative;
+            left: 5px;
+
+
+            
+
+        }
+
+        div:hover{
+            position: relative;
+            top: 5px;   
+            background-color: hotpink;
+        }
+
+       
+     </style>
+</head>
+<body>
+    <div class="box1">T</div>
+    <div class="box2">H</div>
+    <div class="box3">A</div>
+    <div class="box4">N</div>
+    <div class="box5">K</div>
+    <div class="box6">S</div>
+</body>
+</html>
