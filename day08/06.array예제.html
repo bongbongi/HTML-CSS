@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열만들기</title>
+</head>
+
+<body>
+    <h1>다음과 같은 배열을 만드는 range함수를 완성하시오</h1>
+    <h1>완성 후 클럽에 제출</h1>
+    <!-- 끝값은 미포함 -->
+    <ul>
+        <li>
+            range(1,6,1) => [1,2,3,4,5]
+        </li>
+        <li>
+            range(3,10,2) => [3,5,7,9]
+        </li>
+        <li>
+            range(10,-10,-4) => [10,6,2,-2,-6]
+        </li>
+        <br>
+
+        <hr>
+        <form action="">배열 만들기
+            <fieldset>
+                시작 : <input type="text" id="start"><br>
+                범위 : <input type="text" id="end"><br>
+                증가 : <input type="text" id="step"><br>
+                <br>
+                <button type="button" id="btn" onclick="range()">배열 생성</button>
+            </fieldset>
+
+        </form>
+        <h3 id="result"></h3>
+    </ul>
+    <script>
+        const arr = [];
+
+        function range(start, end, step) {
+            if (start < end) {
+                for (let i = start; i < end; i += step) {
+                    arr.push(i);
+                }
+
+            } else if (start > end) {
+                for (let i = start; i > end; i += step) {
+                    arr.push(i);
+                }
+
+            }
+            return arr;
+        }
+        document.getElementById('btn').addEventListener('click', function () {
+            let s = Number(document.getElementById('start').value);
+            let e = Number(document.getElementById('end').value);
+            let p = Number(document.getElementById('step').value);
+            document.getElementById('result').innerHTML = range(s, e, p);
+        })
+
+        // console.log(range(3,10,2));
+
+        // console.log("-----배열 거꾸로 출력-------");
+        // const arr2=[];
+        // function range2(a, b, c){
+        //     if(a<b){
+        //         for(let i=a;i<b;i+=c){ 
+        //             arr2.unshift(i);
+        //         }
+        //         return arr2;
+        //     }else if(a>b){
+        //         for(let i=a;i>b;i+=c){ 
+        //             arr2.unshift(i);
+        //         }
+        //         return arr2;
+        //     }
+        // }
+
+        // console.log(range2(3,10,2));
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
