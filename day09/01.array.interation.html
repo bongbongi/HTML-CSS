@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        배열의 순환할 수 있는 구조를 이용하여 특정 기능을 할 수 있는 메서드가 제공됨.
+    </h1>
+    <ul>
+        <li>
+            - array.forEach(callback function) : 일반 반복문과 유사한 형태로 배열 탐색<br>
+            - array.forEach(function(element_value, index, array)
+                code;
+            }) <br>
+            - array.forEach(function(element_value, array){
+                code;
+            })
+        </li>
+        <li>
+            array.map(callback function) : forEach를 수행하면서 연산결과를 리턴하여 새로운 배열을 만들어 줌
+        </li>
+        <li>
+            array.filter(callback function) : map처럼 수행 + 비교 연산의 결과에서 
+            true에 해당하는 값만 필터링하여 리턴함
+        </li>
+        
+    </ul>
+    <script>
+        console.log("------------el, i, self--------------");
+        const numArr = [12,3,46,31,17,'s','p','g'];
+        numArr.forEach(function(elem_value, index,self){
+            console.log(index, elem_value,self);
+
+        })
+
+        console.log("------------el, i--------------");
+        numArr.forEach(function(elem_value,index){
+            console.log(index,elem_value);
+        })
+
+        console.log("------------el----------------");
+        //값만 추출
+        numArr.forEach(function(elem_value,index){ 
+            console.log(elem_value);
+        })
+
+        console.log("------------메서드 오버로딩--------------");
+        //메서드명이 같아도 파라미터의 형태를 달리하면 중복으로 사용할 수 있게 만드는 기법
+        //메서드 오버로딩(method overloading)이라 한다.
+
+        const strArr = ['a','b','c','f','r','s'];
+        //forEach를 이용하여 index, value 값을 출력하시오.
+        strArr.forEach(function(elem_value,index){
+            console.log(index,elem_value);
+        })
+        console.log("-------printNumber(el,i,arr) 메서드---------");
+        function printNumber(el,i,arr){
+            console.log(i,el);
+        }
+        numArr.forEach(printNumber);
+
+        console.log("----map() invoke callback function----");
+
+        function printNumber2(el,i,arr){
+            return `${i} : ${el} : ${arr[i]}`;
+        }
+
+        const newStrArr = strArr.map(printNumber2); 
+        console.log(newStrArr);
+
+        const newStrArr2 = strArr.map(function(el, i){
+            return `${i} : ${el}`;
+        })
+        console.log(newStrArr2);
+
+        //numArr를 위의 map형태로 출력
+        const newStrArr3 = numArr.map(function(el,i){
+            return `${i} : ${el}`;
+        })
+        console.log(newStrArr3);
+
+        console.log("---------람다식, +1 해서 출력---------");
+        const newNumArr = numArr.map(num=>num+1).forEach(el=>console.log(el));
+
+        console.log("-----------------filter------------------");
+        // isNaN : number가 아닌 값만 출력
+        // !isNaN : number 인 값만 출력
+        const numNewArr = numArr.filter(function(el,i,arr){
+            return isNaN(el); //number가 아닌것만 리턴
+        })
+
+        console.log(numNewArr);
+
+
+        //람다식 사용하여 10보다 큰 값만 추출하기
+        const numNewArr1 = numArr.filter(num =>num>10).forEach(el=>console.log(el)); 
+                                        //num를 변수로 받아서 이 변수num이 10보다 크다면 forEach해라(출력해라)
+        console.log(numNewArr1);
+
+
+    </script>
+</body>
+</html>
