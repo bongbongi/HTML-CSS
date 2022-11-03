@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break, continue</title>
+</head>
+
+<body>
+    <h1>
+        break : 특정 조건에서 반복을 중지하고 싶을 때 사용 <br>
+        continue : 특정 조건에서 실행을 건너뛰고 반복을 이어가고 싶을 때 사용
+    </h1>
+    <ul>
+        <li>
+            java에서와 같은 형태로 사용
+        </li>
+        <li>
+            제어문에서 주로 사용되며 반복문을 벗어나고 싶을 때
+            벗어나고자 하는 조건과 같이 사용
+        </li>
+        <li>
+            continue : 특정 시점에서 조건을 수행한 후 아래 코드를 스킵하고 반복을 지속함.
+        </li>
+        <script>
+            console.log("--1~10까지 출력--");
+
+            for (let i = 1; i <= 10; i++) {
+                console.log(i);
+            }
+            console.log("--1~10까지 출력(선생님 답)--");
+            let count = 0;
+            while (count <= 10) {
+                count++;
+                console.log(count);
+            }
+            console.log("--1~7까지 출력 후 8되면 중지--");
+            for (let i = 1; i <= 10; i++) {
+                if (i == 8) {
+                    break;
+                }
+                console.log(i);
+            }
+            console.log("--1~7까지 출력 후 8되면 중지(선생님답)--");
+            let count1 = 0;
+            while (count1 < 10) {
+
+                if (count1 == 7) {
+
+                    break;
+                }
+                count1++;
+                console.log(count1);
+
+            }
+            console.log("--1~10까지 출력 (7은 제외)--");
+            for (let i = 1; i <= 10; i++) {
+                if (i == 7) {
+                    continue;
+                }
+                console.log(i);
+            }
+        </script>
+    </ul>
+</body>
+
+</html>

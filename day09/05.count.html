@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count</title>
+</head>
+
+<body>
+    <h1>
+        Count 만들기
+    </h1>
+    + 버튼을 클릭하면 숫자가 1씩 증가하고,
+    - 버튼을 클릭하면 숫자가 1씩 감소하는 Count 만들기
+    <br>
+    <br>
+    <h3 id="num">0</h3>
+    <button type="button" id="incre" onclick="plus()">+</button>
+    <button type="button" id="decre" onclick="minus()">-</button>
+    <script>
+
+        // function plus() {
+
+
+        //     let num1 = Number(document.getElementById('num').innerHTML);
+        //     //value로 하면 값이 안나옴. innerHTML로 해야함!!
+        //     num1++;
+        //     document.getElementById('num').innerText =
+        //         `${num1}`;
+        // }
+
+        // function minus() {
+
+        //     let num1 = Number(document.getElementById('num').innerHTML);
+
+
+        //     if (num1 < 1) {
+        //         num1 == 0;
+
+        //     } else {
+        //         num1--;
+        //         document.getElementById('num').innerText =
+        //             `${num1}`;
+        //     }
+
+        // }
+
+
+
+        //선생님
+        document.getElementById('incre').addEventListener('click', function () {
+            let currVal = parseInt(document.getElementById('num').innerText);
+            document.getElementById('num').innerText = currVal + 1;
+        });
+
+        document.getElementById('decre').addEventListener('click', function () {
+            let currVal = parseInt(document.getElementById('num').innerText);
+            if (currVal <= 0) {
+                document.getElementById('num').innerText = 0;
+            } else {
+                document.getElementById('num').innerText = currVal - 1;
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>

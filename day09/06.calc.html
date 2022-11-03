@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+</head>
+
+<body>
+    <h1>
+        계산기 만들기
+    </h1>
+    숫자 2개와 연산자를 입력받아 연산의 결과를 출력 <br>
+    입력받는 input 2개<br>
+    연산자는 button + - * / 총 4개<br>
+    결과창 h3 : 두 수의 연산 결과 출력<br>
+    <br>
+    <hr>
+    숫자 1 : <input type="text" id="num1" > <br>
+    숫자 2 : <input type="text" id="num2"> <br>
+    <!-- <button type="button" class="x" onclick="operation('+')">+</button>
+    <button type="button" class="x" onclick="operation('-')">-</button>
+    <button type="button" class="x" onclick="operation('*')">*</button>
+    <button type="button" class="x" onclick="operation('/')">/</button> -->
+
+    <!-- = 누르면 실행되게 하기 -->
+    <button type="button" class="x" >+</button>
+    <button type="button" class="x" >-</button>
+    <button type="button" class="x" >*</button>
+    <button type="button" class="x" >/</button>
+    <button type="button" class="x" onclick="operation('=')">=</button>
+    <h3 id="result"></h3>
+</body>
+<script>
+    //선생님
+    function operation(op){
+        let num1 = parseInt(document.getElementById('num1').value );
+        let num2 = parseInt(document.getElementById('num2').value );
+        let result = 0;
+
+        switch (op!='=') {
+        case '+':
+            result = num1 + num2; break;
+        case '-':
+            result = num1 - num2; break;
+        case '*':
+            result = num1 * num2; break;
+        case '/':
+         result = num1 / num2; break;
+        
+
+    }
+        document.getElementById('x').addEventListener('click', function () {
+
+        document.getElementById('result').innerText = `${num1} ${op} ${num2} = ${result.toFixed(2)}`;
+    }
+     
+//     document.getElementsByClassName('x').addEventListener('click', function () {
+//     let num1 = parseInt(document.getElementById('num1').innerText );
+//     let num2 = parseInt(document.getElementById('num2').innerText );
+//     console.log(num1);
+//     console.log(num2);
+//     let x = document.getElementsByClassName('x');    
+//     for(let i = 0; i<x.length; i++){
+//         if(x='+'){
+//             document.getElementById('result').innerText = num1 + num2;
+//         }else if(x='-'){
+//             document.getElementById('result').innerText = num1 - num2;
+//         }else if(x='*'){
+//             document.getElementById('result').innerText = num1 * num2;
+//         }else{
+//             document.getElementById('result').innerText = num1 / num2;
+//         }
+
+        
+// }
+//     // switch (x) {
+//     //     case '+':
+//     //         document.getElementById('result').innerText = num1 + num2; break;
+//     //     case '-':
+//     //         document.getElementById('result').innerText = num1 - num2; break;
+//     //     case '*':
+//     //         document.getElementById('result').innerText = num1 * num2; break;
+//     //     case '/':
+//     //         document.getElementById('result').innerText = num1 / num2; break;
+//     // }
+// })
+
+
+</script>
+
+</html>

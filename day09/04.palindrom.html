@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팰린드롬</title>
+</head>
+
+<body>
+    <h1>
+        팰린드롬 : 거꾸로 읽어도 같은 단어가 되는 단어들
+        ex. 기러기, 토마토, 스위스, 별동별, 우영우, 역삼역, 수박이박수, 가나나가
+    </h1>
+    <ul>
+        <li>
+            단어를 입력받아서 팰린드롬 여부를 출력
+        </li>
+        <li>
+            팰린드롬이 맞음. / 아님
+        </li>
+
+    </ul>
+    단어입력 : <input type="text" id="strData">
+    <button type="button" id="btn", onclick="x()">입력</button>
+    <h3 id="result"></h3>
+
+    <script>
+        function x(){
+            let word=document.getElementById('strData').value;
+            // console.log(word);
+            let leng=Math.floor(word.length/2);
+            for(let i=0;i<leng;i++){
+                if(word.charAt(i)!=word.charAt(word.length-i-1)){
+                    document.getElementById('result').innerText='false';
+                    break;
+                }
+                document.getElementById('result').innerText='true';
+            }
+            
+        }
+
+
+        //선생님
+        function isPalindrome(word){
+            let wordLen = Math.floor(word.length/2); // 1.5 -> 1
+            for(let i=0;i<wordLen;i++){
+                if(word.charAt(i) != word.charAt(word.length-1-i)){ //같지 않으면 더 갈것도 없이 false
+                    return false;
+                }
+            }
+            return true;
+        }
+        document.getElementById('btn').addEventListener('click',function(){
+                                        //클릭이라는 이벤트 발생시 function 실행
+            let strData = document.getElementById('strData').value;
+            document.getElementById('result').innerText =
+            `${(isPalindrome(strData))}?'팰리드롬 맞음':'팰림드롬 아님'`;
+        })
+    </script>
+</body>
+
+</html>
